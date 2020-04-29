@@ -116,8 +116,9 @@ export default {
             type: [String, Number],
             default: 'auto',
             validator: function (val) {
-                let valid = (typeof val === 'string') ? val === 'auto' : val >= 0;
-                return valid
+                if( typeof val === 'number' ){ return true; }
+                if( typeof val === 'string' && val === 'auto' ){ return true; }
+                return false;
             }
         },
         dragHandle: {
@@ -267,7 +268,7 @@ export default {
             if( target.tagName == 'INPUT' || target.tagName == 'TEXTAREA' || target.tagName == 'SELECT' ){
                 return;
             }
-            
+
             if (!this.preventActiveBehavior) {
                 this.active = true;
             }
