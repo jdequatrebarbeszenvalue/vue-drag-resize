@@ -263,7 +263,11 @@ export default {
 
         bodyDown: function (ev) {
             let target = ev.target || ev.srcElement;
-
+            
+            if( target.tagName == 'INPUT' || target.tagName == 'TEXTAREA' || target.tagName == 'SELECT' ){
+                return;
+            }
+            
             if (!this.preventActiveBehavior) {
                 this.active = true;
             }
