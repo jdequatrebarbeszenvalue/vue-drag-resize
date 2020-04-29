@@ -200,7 +200,8 @@ export default {
         document.documentElement.addEventListener('mousedown', this.deselect);
 
         document.documentElement.addEventListener('touchmove', this.move, true);
-        document.documentElement.addEventListener('touchend touchcancel', this.up, true);
+        document.documentElement.addEventListener('touchend', this.up, true);
+        document.documentElement.addEventListener('touchcancel', this.up, true);
         document.documentElement.addEventListener('touchstart', this.up, true);
 
         if (this.dragHandle) {
