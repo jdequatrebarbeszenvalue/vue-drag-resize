@@ -627,8 +627,8 @@ export default {
             return {
                 top: this.top + 'px',
                 left: this.left + 'px',
-                width: this.width + 'px',
-                height: this.height + 'px',
+                width:  ( this.width  > 0 ? this.width  : 0 ) + 'px',
+                height: ( this.height > 0 ? this.height : 0 ) + 'px',
                 zIndex: this.zIndex
             }
         },
